@@ -1,6 +1,10 @@
 spring:
   application:
     name: product-service
+  datasource:
+    url: ${PRODUCT_DB_URL:jdbc:postgresql://localhost:5432/product_db}
+    username: ${PRODUCT_DB_USERNAME:product_user}
+    password: ${PRODUCT_DB_PASSWORD:product_local_password}
 
 server:
   port: 8081
