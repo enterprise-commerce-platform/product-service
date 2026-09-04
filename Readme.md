@@ -7,7 +7,7 @@
 # Build and run application with Docker
 ./mvnw clean package -DskipTests spring-boot:run -Dspring-boot.run.profiles=local
 
-#Docker build
+#Docker build create image with name product-service:local
 
 docker build -t product-service:local .
 
@@ -23,7 +23,7 @@ product-service:local
 
 
 # In case env variables are not set, you can run the application with the following command:
-docker run --rm --name product-service -p 8081:8081 product-service:<tag_name>    local/prod see #Docker build 
+docker run --rm --name product-service -p 8081:8081 product-service:<tag_name>    local/prod is tag name given while image creation see #Docker build 
 
 
 Organization key enterprise-commerce-platform

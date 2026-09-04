@@ -59,6 +59,7 @@ jobs:
           ignore-unfixed: true
           format: table
           exit-code: "1"
+          version: v0.74.0
 
       - name: Set up Java 21
         uses: actions/setup-java@v6
@@ -83,7 +84,6 @@ jobs:
             -Dsonar.projectKey=$SONAR_PROJECT_KEY
             -Dsonar.token=$SONAR_TOKEN
             -Dsonar.qualitygate.wait=true
-
 
       - name: Build Docker image
         run: docker build -t product-service:${{ github.sha }} .
