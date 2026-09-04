@@ -42,4 +42,9 @@ public class ProductController {
         return   ResponseEntity.ok(productService.getProductById(productId));
     }
 
+    @PatchMapping
+    public ResponseEntity<ProductResponse> updateProduct(@Valid @RequestBody ProductRequest productRequest) {
+        return ResponseEntity.ok(productService.updateProduct(productRequest));
+    }
+
 }
