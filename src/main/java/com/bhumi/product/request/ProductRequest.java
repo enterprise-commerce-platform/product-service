@@ -1,5 +1,6 @@
 package com.bhumi.product.request;
 
+import com.bhumi.product.model.ProductStatus;
 import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
@@ -8,8 +9,10 @@ public record ProductRequest(
 
         @NotBlank(message = "SKU is required")
         String sku,
+
         @NotBlank(message = "Product name is required")
         String name,
+
         @Size(max = 1000, message = "Description must not exceed 1000 characters")
         String description,
 
@@ -20,5 +23,6 @@ public record ProductRequest(
 
         @NotBlank(message = "Currency is required")
         @Pattern(regexp = "^[A-Za-z]{3}$", message = "Currency must be three-letter code")
-        String currency) {
+        String currency,
+        ProductStatus status) {
 }

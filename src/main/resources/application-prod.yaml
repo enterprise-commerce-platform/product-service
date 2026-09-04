@@ -8,9 +8,9 @@ server:
 
 spring:
   datasource:
-    url: ${PRODUCT_DB_URL:jdbc:postgresql://localhost:5432/product_db}
-    username: ${PRODUCT_DB_USERNAME:product_user}
-    password: ${PRODUCT_DB_PASSWORD:product_local_password}
+    url: ${PRODUCT_DB_URL}
+    username: ${PRODUCT_DB_USERNAME}
+    password: ${PRODUCT_DB_PASSWORD}
     hikari:
       maximum-pool-size: ${PRODUCT_DB_POOL_SIZE:10}
       minimum-idle: ${PRODUCT_DB_MIN_IDLE:5}
@@ -41,7 +41,7 @@ spring:
         health:
           probes:
             enabled: true
-            show-details: false
+            show-details: never
     endpoints:
       web:
         exposure:
